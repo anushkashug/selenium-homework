@@ -23,17 +23,16 @@ public static void main(String[] args) {
 
     WebElement enableButton = driver.findElement(By.xpath("//button[text()='Enable']"));
     enableButton.click();
-    try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); }
+
     wait.until(ExpectedConditions.textToBePresentInElement(enableButton, "Disable"));
     String buttonText = enableButton.getText();git init
-
+    git branch -M main
 
     if (buttonText.equals("Disable")) {
         System.out.println(" Button text changed ");
     } else {
         System.out.println(" Button text did not change" + buttonText);
     }
-    try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); }
 
 
 
@@ -43,16 +42,16 @@ public static void main(String[] args) {
     inputField.sendKeys("Bootcamp");
     System.out.println("Text 'Bootcamp' entered in the input field.");
 
-    try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); }
+
 
     inputField.clear();
 
 
-    try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); }
+
 
 
     driver.get("http://the-internet.herokuapp.com/drag_and_drop");
-    try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); }
+
 
 
     WebElement columnA = driver.findElement(By.id("column-a"));
@@ -66,7 +65,7 @@ public static void main(String[] args) {
     } else {
         System.out.println(" Columns not aligned (A: " + yA + ", B: " + yB + ")");
     }
-    try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); }
+
 
 }
 }
